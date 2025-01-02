@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
 
 class Icecream extends StatelessWidget {
   const Icecream({super.key});
@@ -11,13 +12,16 @@ class Icecream extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (BuildContext context) {
+              return const MyApp();
+            }));
           },
         ),
       ),
       body: Column(
         children: [
-          Image.asset('images/bg.jpeg'),
+          Image.asset('assets/bg.jpeg'),
           Container(
             color: Colors.deepOrangeAccent,
             width: double.infinity,

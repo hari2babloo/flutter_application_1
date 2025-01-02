@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -11,7 +12,10 @@ class Profile extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (BuildContext context) {
+              return const MyApp();
+            }));
           },
         ),
       ),
@@ -25,7 +29,7 @@ class Profile extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                Text('Profile',
+                Text('Title',
                     style: TextStyle(
                         fontSize: 24,
                         color: Colors.green,

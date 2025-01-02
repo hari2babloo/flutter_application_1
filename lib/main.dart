@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Forest.dart';
 import 'package:flutter_application_1/home_page.dart';
 import 'package:flutter_application_1/icecream.dart';
 import 'package:flutter_application_1/profile.dart';
@@ -30,17 +31,13 @@ class Comp1 extends StatefulWidget {
 
 class _Comp1State extends State<Comp1> {
   int currentPage = 0;
-  List<Widget> pages = const [
-    HomePage(),
-    Profile(),
-    Icecream(),
-  ];
+  List<Widget> pages = const [HomePage(), Profile(), Icecream(), Forest()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Comp1'),
-      ),
+      // appBar: AppBar(
+      //   title: const Text('Comp1'),
+      // ),
       body: pages[currentPage],
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -56,6 +53,8 @@ class _Comp1State extends State<Comp1> {
           ),
           NavigationDestination(icon: Icon(Icons.person), label: 'profile'),
           NavigationDestination(icon: Icon(Icons.icecream), label: 'Ice cream'),
+          NavigationDestination(
+              icon: Icon(Icons.forest_sharp), label: 'Forest'),
         ],
         onDestinationSelected: (int index) {
           setState(() {
